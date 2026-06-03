@@ -8,21 +8,21 @@ const stateMatrix = {
 
 function play(cycles = 1) {
   let activeNode = 'Instigator'
-  let systemEnt = 0
+  let sysEnt = 0
 
   for (let i = 0; i < cycles; i++) {
     players.forEach(p => {
       if (p === activeNode) {
         const behavior = stateMatrix[p]
         console.log(`Cycle ${i + 1} | ${p} ${behavior.action} -> routing to ${behavior.target}`)
-        if (p === 'Observer') systemEnt += Math.random() * 0.05
+        if (p === 'Observer') sysEnt += Math.random() * 0.05
         activeNode = behavior.target
       }
     })
   }
 
-  console.log(`\nAccumulated observer entropy: ${systemEnt.toFixed(2)}`)
-  return systemEnt
+  console.log(`\nAccumulated observer entropy: ${sysEnt.toFixed(2)}`)
+  return sysEnt
 }
 
 play(3)
