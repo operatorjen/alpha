@@ -7,16 +7,16 @@ const stateMatrix = {
 }
 
 function play(cycles = 1) {
-  let activeNode = 'Instigator'
+  let active = 'Instigator'
   let sysEnt = 0
 
   for (let i = 0; i < cycles; i++) {
     players.forEach(p => {
-      if (p === activeNode) {
+      if (p === active) {
         const behavior = stateMatrix[p]
         console.log(`Cycle ${i + 1} | ${p} ${behavior.action} -> routing to ${behavior.target}`)
         if (p === 'Observer') sysEnt += Math.random() * 0.05
-        activeNode = behavior.target
+        active = behavior.target
       }
     })
   }
