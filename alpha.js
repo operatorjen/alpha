@@ -21,7 +21,7 @@ function play(cycles = 1) {
     })
   }
 
-  console.log(`\nAccumulated observer entropy: ${sysEnt.toFixed(2)}`)
+  console.log(`\nAccumulated entropy: ${sysEnt.toFixed(2)}`)
   return sysEnt
 }
 
