@@ -1,14 +1,12 @@
 const players = ['Instigator', 'Observer', 'Receiver']
-
 const stateMatrix = {
   'Instigator': { action: 'transmits_payload', target: 'Receiver' },
-  'Receiver':   { action: 'processes_signal',  target: 'Observer' },
-  'Observer':   { action: 'records_delta',     target: 'Instigator' }
+  'Receiver': { action: 'processes_signal', target: 'Observer' },
+  'Observer': { action: 'records_delta', target: 'Instigator' }
 }
 
 function play(cycles = 1) {
-  let active = 'Instigator'
-  let sysEnt = 0
+  let active = 'Instigator', sysEnt = 0
 
   for (let i = 0; i < cycles; i++) {
     players.forEach(p => {
@@ -20,7 +18,6 @@ function play(cycles = 1) {
       }
     })
   }
-
   console.log(`\nAccumulated entropy: ${sysEnt.toFixed(2)}`)
   return sysEnt
 }
