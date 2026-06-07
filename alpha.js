@@ -7,7 +7,6 @@ const stateMatrix = {
 
 function play(cycles = 1) {
   let active = 'Instigator', sysEnt = 0
-
   for (let i = 0; i < cycles; i++) {
     players.forEach(p => {
       if (p === active) {
